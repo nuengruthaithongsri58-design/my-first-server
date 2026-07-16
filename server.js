@@ -1,99 +1,69 @@
-// 1. เรียกใช้งาน Module 'http'
 const http = require('http');
 
-// 2. กำหนด Port
 const port = process.env.PORT || 3000;
 
-// 3. สร้าง Server
 const server = http.createServer((req, res) => {
-
-    // 3.1 สถานะการตอบกลับ
     res.statusCode = 200;
-
-    // 3.2 กำหนดชนิดข้อมูล
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
-    // 3.3 ส่งหน้าเว็บ
     res.end(`
-    <!DOCTYPE html>
-    <html lang="th">
-    <head>
-        <meta charset="UTF-8">
-        <title>My Web Server</title>
-        <style>
-            body{
-                margin:0;
-                padding:0;
-                font-family: "TH Sarabun New", Tahoma, sans-serif;
-                background: linear-gradient(135deg,#ffd6e7,#ffeef5);
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                height:100vh;
-            }
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>My Web Server</title>
 
-            .card{
-                background:#fff;
-                padding:40px;
-                border-radius:20px;
-                box-shadow:0 8px 20px rgba(255,105,180,0.25);
-                text-align:center;
-                width:500px;
-            }
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#ffe4ec;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
 
-            h1{
-                color:#e75480;
-                margin-bottom:15px;
-            }
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,105,180,0.3);
+    text-align:center;
+}
 
-            p{
-                color:#666;
-                font-size:22px;
-                margin:10px 0;
-            }
+h1{
+    color:#ff4f8b;
+}
 
-            .footer{
-                margin-top:20px;
-                color:#ff69b4;
-                font-size:18px;
-            }
+p{
+    color:#555;
+    font-size:20px;
+}
+</style>
 
-            .heart{
-                font-size:40px;
-            }
-        </style>
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class="card">
-            <div class="heart">💗</div>
+<div class="card">
+<h1>🌸 สวัสดีค่ะ 🌸</h1>
 
-            <h1>สวัสดีค่ะ</h1>
+<p>นี่คือ Web Server ของ</p>
 
-            <p>
-                นี่คือ Web Server ของ
-                <br><strong>นางสาว หนึ่งฤทัย ทองศรี</strong>
-            </p>
+<p><strong>นางสาว หนึ่งฤทัย ทองศรี</strong></p>
 
-            <p>
-                รหัสนักศึกษา <strong>69319010232</strong>
-            </p>
+<p>รหัสนักศึกษา 69319010232</p>
 
-            <p>เครื่องแม่ข่ายทำงานปกติบนระบบ Railway แล้วค่ะ 🎉</p>
+<p>เครื่องแม่ข่ายทำงานปกติบนระบบ Railway แล้วค่ะ 💗</p>
 
-            <div class="footer">
-                Pastel Pink Theme 🌸
-            </div>
-        </div>
+</div>
 
-    </body>
-    </html>
-    `);
+</body>
+</html>
+`);
 });
 
-// 4. เริ่มทำงาน
 server.listen(port, () => {
-    console.log(`Server is running! เครื่องแม่ข่ายเปิดทำงานแล้วที่ช่องทาง: ${port}`);
+    console.log(`Server is running on port ${port}`);
 });
- });
