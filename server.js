@@ -21,7 +21,7 @@ html += `<table border="1" cellpadding="10">`;
 html += `<tr><th>69319010232</th><th>นางสาว หนึ่งฤทัย ทองศรี</th></tr>`;
 // วนลูปนําขอมูลแตละแถวมาแสดง
 result.rows.forEach(row => {
-html += `<tr><td>${row.s69319010232}</td><td>${row.Nuengruthai Thongsri}</td></tr>`;
+html += `<tr><td>${row.student_id}</td><td>${row.student_name}</td></tr>`;
 });
 html += `</table>`;
 res.end(html);
